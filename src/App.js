@@ -4,6 +4,7 @@ import PrettyPrint from './PrettyPrint';
 import DataTable from './DataTable';
 import PieChart from './PieChart';
 import ClearButton from './ClearButton';
+import ProcessButton from './ProcessButton';
 import './App.css';
 
 function App() {
@@ -12,10 +13,14 @@ function App() {
 
   const handleJsonChange = (event) => {
     setJsonInput(event.target.value);
+  };
+
+  const handleProcess = () => {
     try {
-      const json = JSON.parse(event.target.value);
+      const json = JSON.parse(jsonInput);
       setParsedJson(json);
     } catch (error) {
+      alert('Invalid JSON');
       setParsedJson({});
     }
   };
@@ -24,6 +29,7 @@ function App() {
     <div className="App">
       <h1>Config Analyzer</h1>
       <Textarea value={jsonInput} onChange={handleJsonChange} />
+      <ProcessButton onProcess={handleProcess} />
       <h2>Pretty Printed JSON</h2>
       <PrettyPrint json={parsedJson} />
       <h2>Data Table</h2>
