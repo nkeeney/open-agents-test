@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Textarea from './Textarea';
 import PrettyPrint from './PrettyPrint';
 import DataTable from './DataTable';
@@ -13,6 +13,14 @@ function App() {
   const [jsonInput, setJsonInput] = useState('');
   const [parsedJson, setParsedJson] = useState({});
   const [error, setError] = useState('');
+  const [localStorageData, setLocalStorageData] = useState([]);
+
+  useEffect(() => {
+    // Load data from local storage on component mount
+    const keys = Object.keys(localStorage);
+    const data = keys.map(key => JSON.parse(localStorage.getItem(key)));
+    setLocalStorageData(data);
+  }, []);
 
   const handleJsonChange = (event) => {
     setJsonInput(event.target.value);
@@ -25,6 +33,9 @@ function App() {
       localStorage.setItem(guid, JSON.stringify(json));
       setParsedJson(json);
       setError(''); // Clear any previous errors
+      // Update local storage data
+      const updatedData = [...localStorageData, json];
+      setLocalStorageData(updatedData);
     } catch (error) {
       setParsedJson({});
       setError(error.message); // Set the error message
@@ -40,9 +51,9 @@ function App() {
       <h2>Pretty Printed JSON</h2>
       <PrettyPrint json={parsedJson} />
       <h2>Data Table</h2>
-      <DataTable data={Object.keys(parsedJson)} />
+      <DataTable data={localStorageData} />
       <h2>Pie Chart</h2>
-      <PieChart data={Object.keys(parsedJson)} />
+      <PieChart data={localStorageData} />
       <ClearButton />
     </div>
   );
