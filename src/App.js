@@ -19,6 +19,7 @@ function App() {
     // Load data from local storage on component mount
     const keys = Object.keys(localStorage);
     const data = keys.map(key => JSON.parse(localStorage.getItem(key)));
+    console.log('Loaded data from local storage:', data);
     setLocalStorageData(data);
   }, []);
 
@@ -35,6 +36,7 @@ function App() {
       setError(''); // Clear any previous errors
       // Update local storage data
       const updatedData = [...localStorageData, json];
+      console.log('Updated local storage data:', updatedData);
       setLocalStorageData(updatedData);
     } catch (error) {
       setParsedJson({});
