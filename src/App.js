@@ -5,11 +5,13 @@ import DataTable from './DataTable';
 import PieChart from './PieChart';
 import ClearButton from './ClearButton';
 import ProcessButton from './ProcessButton';
+import ErrorAlert from './ErrorAlert';
 import './App.css';
 
 function App() {
   const [jsonInput, setJsonInput] = useState('');
   const [parsedJson, setParsedJson] = useState({});
+  const [error, setError] = useState('');
 
   const handleJsonChange = (event) => {
     setJsonInput(event.target.value);
@@ -19,9 +21,10 @@ function App() {
     try {
       const json = JSON.parse(jsonInput);
       setParsedJson(json);
+      setError(''); // Clear any previous errors
     } catch (error) {
-      alert('Invalid JSON');
       setParsedJson({});
+      setError(error.message); // Set the error message
     }
   };
 
@@ -30,6 +33,7 @@ function App() {
       <h1>Config Analyzer</h1>
       <Textarea value={jsonInput} onChange={handleJsonChange} />
       <ProcessButton onProcess={handleProcess} />
+      <ErrorAlert message={error} />
       <h2>Pretty Printed JSON</h2>
       <PrettyPrint json={parsedJson} />
       <h2>Data Table</h2>
