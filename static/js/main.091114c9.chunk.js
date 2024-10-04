@@ -1,2 +1,0 @@
-(this["webpackJsonpconfig-analyzer"]=this["webpackJsonpconfig-analyzer"]||[]).push([[0],{10:function(n,e,c){"use strict";c.r(e);var t=c(1),r=c.n(t),i=c(3),a=c.n(i),s=(c(8),c(0));var o=function(){return Object(s.jsx)("div",{className:"App",children:Object(s.jsx)("h1",{children:"Config Analyzer"})})};a.a.render(Object(s.jsx)(r.a.StrictMode,{children:Object(s.jsx)(o,{})}),document.getElementById("root"))},8:function(n,e,c){}},[[10,1,2]]]);
-//# sourceMappingURL=main.091114c9.chunk.js.map

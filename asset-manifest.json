@@ -1,20 +1,13 @@
 {
   "files": {
-    "main.css": "/open-agents-test/static/css/main.9a66b07d.chunk.css",
-    "main.js": "/open-agents-test/static/js/main.091114c9.chunk.js",
-    "main.js.map": "/open-agents-test/static/js/main.091114c9.chunk.js.map",
-    "runtime-main.js": "/open-agents-test/static/js/runtime-main.91a3045a.js",
-    "runtime-main.js.map": "/open-agents-test/static/js/runtime-main.91a3045a.js.map",
-    "static/js/2.ccfa56b3.chunk.js": "/open-agents-test/static/js/2.ccfa56b3.chunk.js",
-    "static/js/2.ccfa56b3.chunk.js.map": "/open-agents-test/static/js/2.ccfa56b3.chunk.js.map",
+    "main.css": "/open-agents-test/static/css/main.44f0615c.css",
+    "main.js": "/open-agents-test/static/js/main.fedbf1d9.js",
     "index.html": "/open-agents-test/index.html",
-    "static/css/main.9a66b07d.chunk.css.map": "/open-agents-test/static/css/main.9a66b07d.chunk.css.map",
-    "static/js/2.ccfa56b3.chunk.js.LICENSE.txt": "/open-agents-test/static/js/2.ccfa56b3.chunk.js.LICENSE.txt"
+    "main.44f0615c.css.map": "/open-agents-test/static/css/main.44f0615c.css.map",
+    "main.fedbf1d9.js.map": "/open-agents-test/static/js/main.fedbf1d9.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.91a3045a.js",
-    "static/js/2.ccfa56b3.chunk.js",
-    "static/css/main.9a66b07d.chunk.css",
-    "static/js/main.091114c9.chunk.js"
+    "static/css/main.44f0615c.css",
+    "static/js/main.fedbf1d9.js"
   ]
 }
