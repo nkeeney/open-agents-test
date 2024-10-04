@@ -6,6 +6,7 @@ import PieChart from './PieChart';
 import ClearButton from './ClearButton';
 import ProcessButton from './ProcessButton';
 import ErrorAlert from './ErrorAlert';
+import generateGUID from './generateGUID';
 import './App.css';
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
   const handleProcess = () => {
     try {
       const json = JSON.parse(jsonInput);
+      const guid = generateGUID();
+      localStorage.setItem(guid, JSON.stringify(json));
       setParsedJson(json);
       setError(''); // Clear any previous errors
     } catch (error) {
