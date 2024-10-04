@@ -3,6 +3,7 @@ import Textarea from './Textarea';
 import PrettyPrint from './PrettyPrint';
 import DataTable from './DataTable';
 import PieChart from './PieChart';
+import ClearButton from './ClearButton';
 import './App.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
       <DataTable data={Object.keys(parsedJson)} />
       <h2>Pie Chart</h2>
       <PieChart data={Object.keys(parsedJson)} />
+      <ClearButton />
     </div>
   );
 }
